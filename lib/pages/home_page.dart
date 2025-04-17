@@ -36,6 +36,8 @@ class _HomePageBody extends StatelessWidget {
     // final tempScan = new ScanModel(valor: 'http://google.com');
     // DbProvider.db.nuevoScan(tempScan);
     // DbProvider.db.getScanById(4).then((scan) => print(scan?.valor));
+    // DbProvider.db.getTodosLosScans().then(print);
+    // DbProvider.db.deleteAllScan().then(print);
     switch (currentIndex) {
       case 0:
         return MapasPage();

@@ -17,6 +17,10 @@ class ScanModel {
   int? id;
   String? tipo;
   String valor;
+  String toString() {
+    return 'ID: ${this.id} | TIPO: ${this.tipo} | VALOR: ${this.valor}';
+  }
+
   factory ScanModel.fromJson(Map<String, dynamic> json) => ScanModel(
         id: json["id"],
         tipo: json["tipo"],
