@@ -1,34 +1,28 @@
 import 'dart:convert';
-import 'package:meta/meta.dart';
 
-ScanModel scanModelFromMap(String str) => ScanModel.fromMap(json.decode(str));
-
-String scanModelToMap(ScanModel data) => json.encode(data.toMap());
+ScanModel scanModelFromJson(String str) => ScanModel.fromJson(json.decode(str));
+String scanModelToJson(ScanModel data) => json.encode(data.toJson());
 
 class ScanModel {
   ScanModel({
-    required this.id,
-    required this.tipo,
+    this.id,
+    this.tipo,
     required this.valor,
   }) {
-    if (tipo.contains('http')) {
-      tipo = 'http';
-    } else {
-      tipo = 'geo';
-    }
+    if (this.valor.contains("http"))
+      this.tipo = "http";
+    else
+      this.tipo = "geo";
   }
-
-  int id;
-  String tipo;
+  int? id;
+  String? tipo;
   String valor;
-
-  factory ScanModel.fromMap(Map<String, dynamic> json) => ScanModel(
+  factory ScanModel.fromJson(Map<String, dynamic> json) => ScanModel(
         id: json["id"],
         tipo: json["tipo"],
         valor: json["valor"],
       );
-
-  Map<String, dynamic> toMap() => {
+  Map<String, dynamic> toJson() => {
         "id": id,
         "tipo": tipo,
         "valor": valor,
