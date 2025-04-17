@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:qr_scanner/pages/pages.dart';
+import 'package:qr_scanner/providers/db_provider.dart';
 import 'package:qr_scanner/providers/ui_providers.dart';
 import 'package:qr_scanner/widgets/widgets.dart';
 
@@ -31,6 +32,8 @@ class _HomePageBody extends StatelessWidget {
     final uiProvider = Provider.of<UiProvider>(context);
     // cambiar para mostrar la pagina respectiva
     final currentIndex = uiProvider.selectedMenuOpt;
+    // TODO: Temporal leer la base de datos
+    DbProvider.db.database;
     switch (currentIndex) {
       case 0:
         return MapasPage();
