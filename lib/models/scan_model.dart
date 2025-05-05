@@ -9,16 +9,18 @@ class ScanModel {
     this.tipo,
     required this.valor,
   }) {
-    if (this.valor.contains("http"))
-      this.tipo = "http";
-    else
-      this.tipo = "geo";
+    if (valor.contains("http")) {
+      tipo = "http";
+    } else {
+      tipo = "geo";
+    }
   }
   int? id;
   String? tipo;
   String valor;
+  @override
   String toString() {
-    return 'ID: ${this.id} | TIPO: ${this.tipo} | VALOR: ${this.valor}';
+    return 'ID: ${id} | TIPO: ${tipo} | VALOR: ${valor}';
   }
 
   factory ScanModel.fromJson(Map<String, dynamic> json) => ScanModel(

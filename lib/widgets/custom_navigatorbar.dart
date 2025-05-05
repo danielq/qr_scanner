@@ -3,6 +3,8 @@ import 'package:provider/provider.dart';
 import 'package:qr_scanner/providers/ui_providers.dart';
 
 class CustomNavigationbar extends StatelessWidget {
+  const CustomNavigationbar({super.key});
+
   @override
   Widget build(BuildContext context) {
     final uiProvider = Provider.of<UiProvider>(context);
