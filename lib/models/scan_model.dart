@@ -30,7 +30,7 @@ class ScanModel {
 
   @override
   String toString() {
-    return 'ID: ${id} | TIPO: ${tipo} | VALOR: ${valor}';
+    return 'ID: $id | TIPO: $tipo | VALOR: $valor';
   }
 
   factory ScanModel.fromJson(Map<String, dynamic> json) => ScanModel(
